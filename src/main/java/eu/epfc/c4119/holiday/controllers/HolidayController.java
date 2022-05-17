@@ -24,4 +24,17 @@ public class HolidayController {
         model.addAttribute("list", holidays);
         return "holidays.html";
     }
+
+    public String pureJava() {
+        String html = "<!DOCTYPE html>";
+        html += "<html lang=\"en\">";
+        html += "<head>";
+        html += "...";
+        html += "<ul>";
+        for (Holiday h : repository.findAll()) {
+            html += "<li><span>" + h + "</span></li>";
+        }
+        html += "</ul></div></body></html>";
+        return html;
+    }
 }

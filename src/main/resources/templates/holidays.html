@@ -6,14 +6,18 @@
 </head>
 <body>
     <h1>Demandes de congés</h1>
+    <!-- si la list est vide (alors le div est créé) -->
     <div th:if="${list.isEmpty()}">
         <p>Pas de demandes de congés en votre nom</p>
     </div>
+    <!-- si la liste n'est pas vide (alors le div est crée -->
     <div th:unless="${list.isEmpty()}">
         <p>Les demandes de congés sont</p>
         <ul>
+            <!-- pour chaque h dans la list -->
             <li th:each="h:${list}">
-                <span th:text="$h"></span>
+                <!-- affiche h dans le <span> -->
+                <span th:text="${h.toString()}"></span>
             </li>
         </ul>
     </div>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employées</title>
+</head>
+<body>
+  <div th:if="${list.isEmpty()}">
+    <p>Pas d'employée</p>
+  </div>
+  <div th:unless="${list.isEmpty()}">
+    <p>Les employés sont:</p>
+    <ul>
+      <li th:each="e:${list}" th:text="${e}"></li>
+    </ul>
+  </div>
+</body>
+</html>
