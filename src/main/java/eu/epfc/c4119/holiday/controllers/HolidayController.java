@@ -5,6 +5,7 @@ import eu.epfc.c4119.holiday.repositories.HolidayRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -25,16 +26,16 @@ public class HolidayController {
         return "holidays.html";
     }
 
-    public String pureJava() {
-        String html = "<!DOCTYPE html>";
-        html += "<html lang=\"en\">";
-        html += "<head>";
-        html += "...";
-        html += "<ul>";
-        for (Holiday h : repository.findAll()) {
-            html += "<li><span>" + h + "</span></li>";
-        }
-        html += "</ul></div></body></html>";
-        return html;
+    @GetMapping("request")
+    public String request(Model model) {
+        model.addAttribute("holiday", new Holiday());
+        return "request.html";
+    }
+
+    @PostMapping("request")
+    public String requestPost(Holiday holiday) {
+        holiday.setStatus("REQUESTED");
+        repository.save(holiday);
+        return "redirect:holidays";
     }
 }
