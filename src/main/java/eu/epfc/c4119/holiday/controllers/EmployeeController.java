@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
+/**
+ * traite les requêtes http
+ */
 @Controller
 public class EmployeeController {
     private EmployeeRepository repository;
