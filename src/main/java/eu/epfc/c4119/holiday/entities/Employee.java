@@ -1,12 +1,11 @@
 package eu.epfc.c4119.holiday.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@SequenceGenerator(name="EMPLOYEE_SEQ", sequenceName = "employee_seq")
 public class Employee {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "EMPLOYEE_SEQ")
     Long id;
     String registration;
     String firstname;
