@@ -9,6 +9,11 @@
 </head>
 <body>
     <div class="container">
+        <div>
+            <a href="holidays" class="btn btn-warning border">congés</a>
+            <a href="request" class="btn border">nouveau congé</a>
+            <a href="employees" class="btn border">employés</a>
+        </div>
         <h1>Demander un congé</h1>
         <form method="post" th:action="@{/request}" th:object="${holiday}">
             <div class="mb-3">

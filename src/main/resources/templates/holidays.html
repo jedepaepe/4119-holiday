@@ -7,6 +7,11 @@
 </head>
 <body>
     <div class="container">
+        <div>
+            <a href="holidays" class="btn btn-warning border">congés</a>
+            <a href="request" class="btn border">nouveau congé</a>
+            <a href="employees" class="btn border">employés</a>
+        </div>
         <h1>Demandes de congés</h1>
         <!-- si la list est vide (alors le div est créé) -->
         <div th:if="${list.isEmpty()}">
